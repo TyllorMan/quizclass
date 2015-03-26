@@ -11,8 +11,8 @@
 		}
 		//seleciona o banco
 		mysql_select_db("web1", $con);
-		//executa a query
-		$sql = "INSERT INTO usuario (email, senha ) VALUES ('$_POST[email]', '$_POST[senha]')";
+		$senha_md5 = md5($_POST[senha]);
+		$sql = "INSERT INTO usuario (email, senha ) VALUES ('$_POST[email]', '$senha_md5')";
 		if (!mysql_query($sql, $con)) {
 			die('Error: ' . mysql_error());
 		}
