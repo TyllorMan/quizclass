@@ -1,3 +1,6 @@
+<?php 
+   session_start();
+?>
 <html>
 	<head>
 		<title></title>
@@ -15,10 +18,12 @@
 			if($linha["senha"]==md5($_POST[senha])) {
                              echo "e-mail:".$linha["email"]."</br>";
 		             $logado = 1;
+ 			     $_SESSION["user"] = $linha["email"];
 			     break;
                         }
 		}
                 if($logado==1)  {
+                    
                      echo "Bem vindo!!!</br>";
 		     echo "<a href='listar.php'>Listar Usuarios</a></br>";
                      echo "<a href='cadastro_enquete.php'>Criar Enquete</a></br>";
