@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<?php
-                 
+                        
 		$con = mysql_connect("localhost","root","root");
 		mysql_select_db("web1", $con);
 		$query = "SELECT * FROM usuario WHERE email='$_POST[email]'";
