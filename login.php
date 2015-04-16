@@ -25,9 +25,7 @@
                 if($logado==1)  {
                     
                      echo "Bem vindo!!!</br>";
-		     echo "<a href='listar.php'>Listar Usuarios</a></br>";
-                     echo "<a href='cadastro_enquete.php'>Criar Enquete</a></br>";
- 		     echo "<a href='listar_enquete.php'>Listar Enquete</a></br>";
+		     include 'menu.php';
 		}
 		else
                      echo "Senha ou usuario invalido!!!</br>";

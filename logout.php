@@ -14,5 +14,7 @@ session_destroy();
 ?>
 Ate a próxima! 
 :D
+</br>
+<a href="index.php">Ir para o inicio</a>
 </body>
 </html> 

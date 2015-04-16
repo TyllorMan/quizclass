@@ -12,10 +12,7 @@
                     	echo "usuario:".$_SESSION["user"];
 	
                      echo "</br>Bem vindo!!!</br>";
-		     echo "<a href='listar.php'>Listar Usuarios</a></br>";
-                     echo "<a href='cadastro_enquete.php'>Criar Enquete</a></br>";
- 		     echo "<a href='listar_enquete.php'>Listar Enquete</a></br>";
-	             echo "<a href='logout.php'>Sair</a></br>";
+		     include 'menu.php';
 		  }
 		  else
                      echo  "<form action='login.php' method='POST'>". 
