@@ -22,14 +22,15 @@
 			     $_SESSION['papeis']=array();
 			     $query2 = "SELECT * FROM usuario_papel WHERE id_usuario=".$linha["id"];
 			     $result2 = mysql_query($query2, $con);
+ 			     $count = 0;
 			     while($linha2 = mysql_fetch_array($result2)) {
 			        $query3 = "SELECT * FROM papel WHERE id=".$linha2["id_papel"];
 				$result3 = mysql_query($query3, $con);
-                                $count = 0;
+                               
 				while($linha3 = mysql_fetch_array($result3)) {
 				   
 				   $_SESSION['papeis'][$count++]=$linha3["nome"];	
-				   echo " - papel:".$linha3["nome"]."</br>";
+				   //echo " - papel:".$linha3["nome"]."</br>";
 				   	
 				} 
 			     } 	

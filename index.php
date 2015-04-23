@@ -10,7 +10,7 @@
                 
                   if($_SESSION["user"]!=null)  {
                     	echo "usuario:".$_SESSION["user"];
-			print_r($_SESSION["papeis"]);
+			
                      echo "</br>Bem vindo!!!</br>";
 		     include 'menu.php';
 		  }
