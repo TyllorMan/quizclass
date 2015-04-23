@@ -19,6 +19,7 @@
                              echo "e-mail:".$linha["email"]."</br>";
 		             $logado = 1;
  			     $_SESSION["user"] = $linha["email"];
+			     $_SESSION["user_id"] = $linha["id"];
 			     $_SESSION['papeis']=array();
 			     $query2 = "SELECT * FROM usuario_papel WHERE id_usuario=".$linha["id"];
 			     $result2 = mysql_query($query2, $con);

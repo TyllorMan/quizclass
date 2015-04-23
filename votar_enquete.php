@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <html>
 	<head>
 		<title></title>
@@ -22,7 +25,12 @@
 		$query = "UPDATE pergunta SET votos='$votos' WHERE id=$_POST[enquete]";
                 
 		if(mysql_query($query, $con)!=FALSE) {
-                     echo "Voto Computado com sucesso!";
+                     
+			$sql = "INSERT INTO usuario_votou (id_usuario, id_enquete) VALUES ('$_SESSION[user_id]','$_POST[id_enquete]')";
+			if (!mysql_query($sql, $con)) {
+				die('Error: ' . mysql_error());
+			}
+		        echo "Voto Computado com sucesso!";
                  }
 		
 		?>

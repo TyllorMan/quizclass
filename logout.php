@@ -12,7 +12,7 @@ session_unset();
 // destroy the session
 session_destroy();
 ?>
-Ate a próxima! 
+Ate a proxima! 
 :D
 </br>
 <a href="index.php">Ir para o inicio</a>

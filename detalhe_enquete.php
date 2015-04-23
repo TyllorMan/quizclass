@@ -15,6 +15,7 @@
 			echo "<input type='radio' name='enquete' value='".$linha["id"]."'>".$linha["texto"]."</br>";
 		}
                   echo "<input type='hidden' name='id_enquete' value='".$_GET[id]."'/>";  
+		
                   echo "<input type='submit' value='Votar'/>";   
                   echo "</form>"; 
 		?>
