@@ -8,8 +8,6 @@
              }
 	     return false;
         }
-       
-	
 	echo "<a href='listar_enquete.php'>Listar Enquete</a></br>";
 
 	if(testRole("ADMIN") || testRole("PROFESSOR")) {

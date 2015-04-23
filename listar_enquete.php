@@ -13,6 +13,30 @@
 	<head>
 		<title></title>
 	</head>
+	<script>
+		function carregarEnquetes()
+		{
+               
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		    }
+		  }
+		xmlhttp.open("GET","novas_enquetes.php",true);
+		xmlhttp.send();
+		}
+	</script>
 	<body>
 		<?php
 		$con = mysql_connect("localhost","root","root");
@@ -30,9 +54,11 @@
 
 		   echo "  <a href='resultado_enquete.php?id=".$linha["id"]."&titulo=".$linha["titulo"]."'>Resultado</a></br>";
                  }
-		if(!$tinhaEnquete) 
-		   echo " - Nao Existem Enquetes Abertas</br>";
+		if(!$tinhaEnquete)  {
+		   echo "<div id='myDiv'> - Nao existem enquetes novas</div>";
 
+                } 
+		echo "<button type='button' onclick='carregarEnquetes()'>Atualizar</button>";
 		$query = "SELECT enquete.id, enquete.titulo, usuario_votou.id_enquete FROM enquete INNER JOIN usuario_votou ON enquete.id = usuario_votou.id_enquete AND usuario_votou.id_usuario =".$_SESSION["user_id"];
 		//echo $query;
 		$result = mysql_query($query, $con);
@@ -53,4 +79,9 @@
 		
 		<p><a href="index.php">Home</a></p>
 	</body>
+	<script>
+	   var myVar=setInterval(function () {
+               carregarEnquetes()
+             }, 10000);
+        </script>
 </html>
