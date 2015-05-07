@@ -19,5 +19,6 @@
 		echo "<a href='cadastrar_papel.php'>Cadastrar Papel</a></br>";
 		echo "<a href='cadastrar_usuario_papel.php'>Associar Papel a Usuario</a></br>";
         }
+        echo "<a href='JogoDaTartaruga/index.php'>Ambiente Virtual 2D</a></br>";
 	echo "<a href='logout.php'>Sair</a></br>";
 ?>
